@@ -5,9 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "pre-build": "node theme-setting.js && node check-version.js",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test:typescript": "export NODE_OPTIONS=--max_old_space_size=6144 && tsc --noEmit"
   },
   "dependencies": {
     "@ckeditor/ckeditor5-build-classic": "^35.4.0",

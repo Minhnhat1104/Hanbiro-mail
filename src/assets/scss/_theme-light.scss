@@ -1,3 +1,5 @@
+@use "sass:color";
+
 :root {
     //topbar 
     --#{$prefix}heading-bg:              #{$white};
@@ -12,7 +14,7 @@
     --#{$prefix}heading-dark-bg:          #2a3042;
 
     --#{$prefix}input-border-color:             #{$gray-400};
-    --#{$prefix}input-focus-border-color:       #{darken($gray-400, 10%)};
+    --#{$prefix}input-focus-border-color:       #{color.adjust($gray-400, $lightness: -10%, $space: hsl)};
     --#{$variable-prefix}form-check-input-border:  #{rgba($black, 0.1)};
 
     //footer

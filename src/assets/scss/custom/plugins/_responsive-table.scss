@@ -1,3 +1,5 @@
+@use "sass:color";
+
 
 //
 // Responsive Table
@@ -43,7 +45,7 @@
     color: $dropdown-color !important;
 
     &:hover{
-      background-color: lighten($gray-200, 2%) !important;
+      background-color: color.adjust($gray-200, $lightness: 2%, $space: hsl) !important;
     }
 
     label {

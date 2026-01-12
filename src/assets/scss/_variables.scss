@@ -1,3 +1,5 @@
+@use "sass:color";
+
 // ========================= || Variables || ========================= //
 
 // Vertical Sidebar  Light
@@ -1421,7 +1423,7 @@ $popover-arrow-width: 1rem;
 $popover-arrow-height: 0.5rem;
 $popover-arrow-color: $popover-bg;
 
-$popover-arrow-outer-color: fade-in($popover-border-color, 0.05);
+$popover-arrow-outer-color: color.adjust($popover-border-color, $alpha: 0.05);
 // scss-docs-end popover-variables
 
 // Toasts

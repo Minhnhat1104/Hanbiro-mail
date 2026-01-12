@@ -13,7 +13,6 @@ import { emailGet, emailPost, emailPut, Headers } from "helpers/email_api_helper
 import { get, post } from "helpers/api_helper"
 import { URL_POST_AUTO_MOVE_AUTO_SPLIT } from "../settings/urls"
 import { size } from "lodash"
-import config from "config"
 
 export const getListEmail = (params) => {
   return emailGet(URL_GET_EMAIL_LIST, params)

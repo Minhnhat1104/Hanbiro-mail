@@ -1,3 +1,4 @@
+@use "sass:map";
 @import "./theme/default";
 @import "./theme/steel";
 @import "./theme/coffee";
@@ -5,7 +6,6 @@
 @import "./theme/plum";
 
 @import "./sidebar";
-@use "sass:map";
 
 /**
 * Theme Generator

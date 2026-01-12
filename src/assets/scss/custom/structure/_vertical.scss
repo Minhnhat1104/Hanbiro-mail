@@ -1,3 +1,5 @@
+@use "sass:color";
+
 //
 // _menu.scss
 //
@@ -401,7 +403,7 @@
               position: relative;
               width: calc(190px + #{$sidebar-collapsed-width});
               color: $primary;
-              background-color: darken($sidebar-bg, 4%);
+              background-color: color.adjust($sidebar-bg, $lightness: -4%, $space: hsl);
               transition: none;
 
               i {
@@ -760,7 +762,7 @@ body[data-sidebar="greatwhale"] {
         > ul {
           > li {
             &:hover > a {
-              background-color: lighten($primary, 2%);
+              background-color: color.adjust($primary, $lightness: 2%, $space: hsl);
               color: $white;
               i {
                 color: $white;
@@ -813,7 +815,7 @@ body[data-sidebar="colored"] {
 
   @media (max-width: 991.98px) {
     .navbar-brand-box {
-      background-color: lighten($primary, 2%);
+      background-color: color.adjust($primary, $lightness: 2%, $space: hsl);
       background-repeat: repeat-x;
     }
   }
@@ -827,7 +829,7 @@ body[data-sidebar="colored"] {
         > ul {
           > li {
             &:hover > a {
-              background-color: lighten($primary, 2%);
+              background-color: color.adjust($primary, $lightness: 2%, $space: hsl);
             }
           }
         }
@@ -1010,7 +1012,7 @@ body[data-sidebar="strongbliss"] {
 //greatwhale
 body[data-sidebar="greatwhale"] {
   .vertical-menu {
-    background-image: linear-gradient(to right, darken($primary, 15%), #50a5f1);
+    background-image: linear-gradient(to right, color.adjust($primary, $lightness: -15%, $space: hsl), #50a5f1);
     background-repeat: repeat-x;
   }
 
@@ -1024,14 +1026,14 @@ body[data-sidebar="greatwhale"] {
   &.vertical-collpsed {
     .vertical-menu {
       .navbar-brand-box {
-        background-image: linear-gradient(to right, darken($primary, 15%), #50a5f1);
+        background-image: linear-gradient(to right, color.adjust($primary, $lightness: -15%, $space: hsl), #50a5f1);
         background-repeat: repeat-x;
       }
       #sidebar-menu {
         > ul {
           > li {
             &:hover > a {
-              background-image: linear-gradient(to right, darken($primary, 15%), #50a5f1);
+              background-image: linear-gradient(to right, color.adjust($primary, $lightness: -15%, $space: hsl), #50a5f1);
               background-repeat: repeat-x;
             }
           }
@@ -1147,7 +1149,7 @@ body[data-sidebar-image="img4"] {
   background-image: linear-gradient(to right, #f46a6a, #f1b44c);
 }
 .gradient-strong-great-whale {
-  background-image: linear-gradient(to right, darken($primary, 10%), #50a5f1);
+  background-image: linear-gradient(to right, color.adjust($primary, $lightness: -10%, $space: hsl), #50a5f1);
 }
 
 #sidebar-menu {

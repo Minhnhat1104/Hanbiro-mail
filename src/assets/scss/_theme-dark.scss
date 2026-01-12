@@ -1,3 +1,5 @@
+@use "sass:color";
+
 // :root CSS dark variables
 
 [data-layout-mode="dark"] {
@@ -40,9 +42,9 @@
     --#{$prefix}custom-white:                               #{$gray-200};
 
     --#{$prefix}input-border-color:                         #{$gray-300};
-    --#{$prefix}input-focus-border-color:                   #{lighten($gray-300, 4%)};
+    --#{$prefix}input-focus-border-color:                   #{color.adjust($gray-300, $lightness: 4%, $space: hsl)};
     --#{$prefix}hr-border-color:                            #{$gray-300};
-    --#{$variable-prefix}form-check-input-border:           #{lighten($gray-300, 4%)};
+    --#{$variable-prefix}form-check-input-border:           #{color.adjust($gray-300, $lightness: 4%, $space: hsl)};
 
     // component variable
     --#{$prefix}light:                                      #{$gray-300};
@@ -146,9 +148,9 @@
     
     .nav-tabs {
         --#{$prefix}nav-tabs-link-active-bg:                            #{$gray-200};
-        --#{$prefix}nav-tabs-link-active-border-color:                  #{lighten($gray-300, 4%)};
-        --#{$prefix}nav-tabs-border-color:                              #{lighten($gray-300, 4%)};
-        --#{$prefix}nav-tabs-link-hover-border-color:                   #{lighten($gray-300, 4%)};
+        --#{$prefix}nav-tabs-link-active-border-color:                  #{color.adjust($gray-300, $lightness: 4%, $space: hsl)};
+        --#{$prefix}nav-tabs-border-color:                              #{color.adjust($gray-300, $lightness: 4%, $space: hsl)};
+        --#{$prefix}nav-tabs-link-hover-border-color:                   #{color.adjust($gray-300, $lightness: 4%, $space: hsl)};
         --#{$prefix}nav-tabs-link-active-color:                         #{$primary};
     }
     
@@ -177,6 +179,6 @@
     .table-dark {
         --#{$prefix}table-color:                                        #{$gray-400};
         --#{$prefix}table-bg:                                           #{$gray-300};
-        --#{$prefix}table-border-color:                                 #{lighten($gray-300, 4%)};
+        --#{$prefix}table-border-color:                                 #{color.adjust($gray-300, $lightness: 4%, $space: hsl)};
     }
 }

@@ -70,7 +70,7 @@ const isDisabledFeatures = (domain, userData, menu_list) => {
         return true
       }
 
-      const _checkIP = false
+      let _checkIP = false
       for (const [ip, obj] of Object.entries(_ipBlocked)) {
         if (obj.includes(feature) && !isIpDisabled(ip, userData).includes(false)) {
           _checkIP = true

@@ -2,15 +2,20 @@ import fs from "fs"
 import path from "path"
 
 /**
- * Phát hiện JSX:
- * - <Component />
- * - <Component></Component>
- * - <>...</> (Fragment)
+ * Heuristic phát hiện JSX:
+ * - <tag ...>
+ * - <tag>...</tag>
+ * - <tag />
+ * - Fragment <>...</>
+ *
+ * Không parse AST, nhưng đủ chính xác cho migration.
  */
-const jsxRegex = /(<[A-Z][A-Za-z0-9]*\b)|(<\/[A-Z][A-Za-z0-9]*>)|(<>\s*)|(\s*<\/>)/
+const jsxRegex = /(<[a-zA-Z][^>\n]*>)|(<\/[a-zA-Z][^>\n]*>)|(<>\s*)|(\s*<\/>)/
 
 function walk(dir) {
-  for (const entry of fs.readdirSync(dir)) {
+  const entries = fs.readdirSync(dir)
+
+  for (const entry of entries) {
     const fullPath = path.join(dir, entry)
     const stat = fs.statSync(fullPath)
 
@@ -19,21 +24,21 @@ function walk(dir) {
       continue
     }
 
-    // Chỉ xử lý .ts (không đụng .d.ts)
+    // Chỉ xử lý .ts (bỏ qua .d.ts)
     if (!fullPath.endsWith(".ts") || fullPath.endsWith(".d.ts")) {
       continue
     }
 
     const content = fs.readFileSync(fullPath, "utf8")
 
-    // Chỉ đổi khi phát hiện JSX
     if (jsxRegex.test(content)) {
       const newPath = fullPath.replace(/\.ts$/, ".tsx")
+
       fs.renameSync(fullPath, newPath)
-      console.log(`✔ ${fullPath} → ${newPath}`)
+      console.log(`✔ ${path.relative(process.cwd(), fullPath)} → ${path.basename(newPath)}`)
     }
   }
 }
 
-walk("src")
-console.log("Done")
+walk(path.resolve("src"))
+console.log("✔ Done renaming .ts → .tsx")

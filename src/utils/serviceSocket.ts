@@ -1,4 +1,3 @@
-// @ts-nocheck
 import io from "socket.io-client"
 
 let locationInfo = window.location

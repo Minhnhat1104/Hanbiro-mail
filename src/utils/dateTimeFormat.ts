@@ -1,4 +1,3 @@
-// @ts-nocheck
 export const getDateFormat = (userGeneralConfigValue, seperator = "/", library = "datepicker") => {
   const date_format = userGeneralConfigValue?.date_format?.toUpperCase() || ""
 

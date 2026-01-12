@@ -1,4 +1,3 @@
-// @ts-nocheck
 import setupStore from "../store"
 
 export const reduxStateOutsideComponent = () => {

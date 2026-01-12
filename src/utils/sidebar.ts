@@ -1,8 +1,7 @@
-// @ts-nocheck
 import { isArray, isEmpty } from "lodash"
 
 export const formatAdminMenu = (AdminRoutes, extMenus, interfaceConfig) => {
-  let newAdminMenus = []
+  let newAdminMenus: any[] = []
   if (interfaceConfig?.mail_secure == "1") {
     newAdminMenus.push({
       keyTitle: "mail.mail_admin_permit_mailbox",
@@ -12,28 +11,28 @@ export const formatAdminMenu = (AdminRoutes, extMenus, interfaceConfig) => {
     })
   }
 
-  let aliasAccountMenu = {
+  let aliasAccountMenu: any = {
     keyTitle: "mail.mail_alias",
     path: "mail/admin/alias-account",
     disabled: true,
     children: [],
   }
 
-  let forwardMenu = {
+  let forwardMenu: any = {
     keyTitle: "mail.mail_write_setting_forward",
     path: "/mail/admin/forward",
     disabled: true,
     children: [],
   }
 
-  let blockMenu = {
+  let blockMenu: any = {
     keyTitle: "mail.blocked_list",
     path: "/mail/admin/block",
     disabled: true,
     children: [],
   }
 
-  let smtpPop3ImapMenu = {
+  let smtpPop3ImapMenu: any = {
     keyTitle: "mail.mail_smtp_pop3_imap_management",
     path: "/mail/admin/smtp-pop3-imap",
     disabled: true,
@@ -72,7 +71,7 @@ export const formatAdminMenu = (AdminRoutes, extMenus, interfaceConfig) => {
 }
 
 export const formatSettingMenu = (SettingRoutes, extMenus, disableList) => {
-  let newSettingMenus = []
+  let newSettingMenus: any[] = []
   SettingRoutes?.map((menu) => {
     if (menu?.checkDisable) {
       let check = isDisableSetting(disableList, menu?.checkDisable)
@@ -95,7 +94,7 @@ export const isDisableSetting = (disableList, menu) => {
 
 export const updateFolderMenus = (list, menu, subMenu) => {
   if (!isArray(list)) return []
-  let result = []
+  let result: any[] = []
   list.forEach((folder) => {
     if (folder?.key === menu?.key) {
       result.push({
@@ -114,7 +113,7 @@ export const updateFolderMenus = (list, menu, subMenu) => {
 }
 
 export const setCountFolderMenu = (list, newCount) => {
-  let nFolders = []
+  let nFolders: any[] = []
   list?.forEach((folder) => {
     if (folder?.children) {
       nFolders.push({

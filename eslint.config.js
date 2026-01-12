@@ -31,6 +31,7 @@ export default defineConfig([
       "no-empty": "off",
       "no-case-declarations": "off",
       "react-hooks/preserve-manual-memoization": "off",
+      "@typescript-eslint/no-explicit-any": "off",
     },
   },
 ])

@@ -1,10 +1,9 @@
-// @ts-nocheck
 import io from "socket.io-client"
 import moment from "moment/moment"
 import { t } from "i18next"
 import { concat, isEmpty, isUndefined } from "lodash"
 
-export const setBaseHost = (host) => {
+export const setBaseHost = (host: string) => {
   localStorage.setItem("host", host)
 }
 
@@ -27,7 +26,7 @@ export const getBaseUrl = (defaultHost = "") => {
   }
 }
 
-export const getBaseHost = (defaultHost) => {
+export const getBaseHost = (defaultHost: string) => {
   const data = defaultHost ?? localStorage.getItem("host")
   return "https://" + data
 }
@@ -53,9 +52,9 @@ export const getGroupwareUrl = () => {
   }
 }
 
-let socketData
+let socketData: SocketIOClient.Socket | undefined = undefined
 
-export const ServiceSocket = ({ userData = {} }) => {
+export const ServiceSocket = ({ userData = {} }: any) => {
   if (socketData !== undefined) {
     return socketData
   }
@@ -83,7 +82,7 @@ export const ServiceSocket = ({ userData = {} }) => {
   const socket = io.connect(wsUrl, {
     transports: ["websocket"],
     reconnection: true,
-    reconnectionAttempts: "Infinity",
+    reconnectionAttempts: Infinity,
     reconnectionDelay: 1000,
     reconnectionDelayMax: 5000,
     randomizationFactor: 0.5,
@@ -106,29 +105,29 @@ export const ServiceSocket = ({ userData = {} }) => {
   return socket
 }
 
-export const formatSize = (size) => {
+export const formatSize = (size: number) => {
   const i = Math.floor(Math.log(size) / Math.log(1024))
-  return (size / Math.pow(1024, i)).toFixed(2) * 1 + " " + ["B", "KB", "MB", "GB", "TB"][i]
+  return (size / Math.pow(1024, i)).toFixed(2) + " " + ["B", "KB", "MB", "GB", "TB"][i]
 }
 /**
  * Get extension of file
  * @param {*} fileName
  */
 export const getExtensionFile = (fileName = "") => {
-  return fileName.split(".").pop().toLowerCase()
+  return fileName?.split(".")?.pop()?.toLowerCase()
 }
 
 /**
  * Format size of file
  * @param {*} size
  */
-export const humanFileSize = (sizeValue = 0) => {
-  const size = parseInt(sizeValue)
+export const humanFileSize = (sizeValue: string | number = 0) => {
+  const size = parseInt(sizeValue as string)
   if (!size) {
     return "0 KB"
   }
   const i = Math.floor(Math.log(size) / Math.log(1024))
-  return (size / Math.pow(1024, i)).toFixed(2) * 1 + " " + ["B", "KB", "MB", "GB", "TB"][i]
+  return (size / Math.pow(1024, i)).toFixed(2) + " " + ["B", "KB", "MB", "GB", "TB"][i]
 }
 
 export function formatFileSize(fileSize) {
@@ -160,9 +159,9 @@ export const getAvailableFolders = (
   menuKey = "",
   keyword = "",
 ) => {
-  const patt = "",
-    searchExp = "",
-    availableFolders = [],
+  let patt = "",
+    searchExp,
+    availableFolders: any[] = [],
     hasKeyword = isUndefined(keyword) && keyword != ""
   if (hasKeyword) {
     searchExp = new RegExp(keyword.toLowerCase())
@@ -182,11 +181,11 @@ export const getAvailableFolders = (
   }
 
   if (commonMenus.length > 0) {
-    commonMenus.map((item, idx) => {
-      const patt2 = new RegExp(item.key + "")
+    commonMenus.map((item: any, idx) => {
+      const patt2 = new RegExp(item?.key + "")
       if (patt2.test(patt)) {
         if (hasKeyword) {
-          if (searchExp.test(item.name.toLowerCase())) {
+          if (searchExp?.test(item?.name.toLowerCase())) {
             availableFolders.push(item)
           }
         } else {
@@ -251,7 +250,7 @@ export const formatEmailTo = (mailTo = "", myEmail = "") => {
   let emailRegex = ""
   let emailTo = ""
   let checkEmailTo = false // Check if emailTo is more than 1
-  let emailToArr = []
+  let emailToArr: string[] = []
   let emailToFormat = ""
   if (mailTo) {
     if (regex.test(mailTo)) {
@@ -467,7 +466,7 @@ export const vailForwardMail = (mails) => {
    * Check email regex same v2
    */
   const emailReg =
-    /(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))\.?@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/;
+    /(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))\.?@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/
   const c = { status: true, mail: "" }
   if (mails.indexOf(",") < 0) {
     // if (!emailReg.test($.trim(mails)))
@@ -534,7 +533,7 @@ export const isReadSharedMail = (shareInfo) => {
 }
 
 export const renderLanguage = (language_key, replaceData) => {
-  const text = t(language_key) ?? ""
+  let text = t(language_key) ?? ""
   Object.keys(replaceData).forEach(function (key) {
     text = text.replace(key, replaceData[key])
   })
@@ -570,7 +569,7 @@ export const isBasicBox = (key) => {
 
 export const validateStrictEmailFinal = (input) => {
   if (!input) return false
-  const emailToCheck = input.trim()
+  let emailToCheck = input.trim()
   // 1. Extract email from angle brackets < > if present
   // Note: We capture the raw content inside the brackets without modification/sanitization.
   const match = input.match(/<([^>]+)>/)

@@ -1,0 +1,11 @@
+#mail-detail-buttons {
+  button:not(.dropdown-item):not(.text-btn) {
+    width: 30px;
+    height: 30px;
+  }
+  button.text-btn {
+    height: 24px;
+    font-size: 12px !important;
+    padding: 0 3px !important;
+  }
+}

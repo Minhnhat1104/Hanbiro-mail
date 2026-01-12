@@ -1,0 +1,89 @@
+.card {
+  &-list {
+  }
+  &-item {
+    // max-width: 300px;
+    width: 100%;
+    max-height: 200px;
+    box-shadow: unset;
+    background: var(--bs-bg-soft-grey);
+    border: 0 !important;
+    &-used {
+      background-color: #34c38f;
+    }
+  }
+  &-input {
+    background-color: rgba(white, 0.8);
+  }
+  &-icon {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.4);
+    // z-index: 10;
+    opacity: 0;
+    border-radius: inherit;
+    cursor: pointer;
+    &:hover {
+      opacity: 1;
+    }
+    &-item {
+      position: absolute;
+      bottom: 50%;
+      transform: translateY(50%);
+      &:hover {
+        transform: scale(1.5) translateY(35%);
+      }
+    }
+    &-preview {
+      right: 70px;
+    }
+    &-edit {
+      right: 30px;
+    }
+    &-delete {
+      right: -10px;
+    }
+    &-default {
+      right: -50px;
+    }
+  }
+}
+
+.st-sg {
+  &-list-add {
+    background-color: #0066ff;
+    color: white;
+    border: 1px solid #0066ff;
+  }
+  &-modal {
+    top: 200px;
+    left: 20px;
+    box-shadow: 0px 3px 6px -4px rgba(0, 0, 0, 0.12), 0px 6px 16px rgba(0, 0, 0, 0.08),
+      0px 9px 28px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 2px !important;
+    &-btn-save {
+      margin-right: 8px;
+      font-weight: 400;
+    }
+    &-btn-cancel {
+      font-weight: 400;
+    }
+  }
+  &-mode {
+    background: #ffffff !important;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    &-header {
+      background: #ffffff;
+      border-bottom: 1px solid #eff2f7;
+      padding: 16px 24px;
+      color: #495057;
+      font-weight: 500;
+      border-radius: 4px;
+    }
+  }
+}

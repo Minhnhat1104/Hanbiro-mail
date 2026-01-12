@@ -1,0 +1,31 @@
+.form-admin-style-basic-org {
+  .btn-add-user {
+    background-color: #ffffff;
+    border: solid 1px #e1e5ed;
+  }
+  .btn-delete {
+    color: #8392a5;
+    border: 1px solid #e1e5ed;
+    background-color: #fbfbfd;
+    min-width: 90px;
+  }
+  .display-user-name {
+    background-color: #ffffff;
+    border: solid 1px #e9edf1;
+    padding: 10px;
+    height: 100px;
+    overflow: auto;
+    .user-name-a {
+      background-color: #ecf4ff;
+      border: solid 1px #e1e5ed;
+      padding: 5px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      display: inline-flex;
+      align-items: center;
+    }
+  }
+  .org-not-font-weight {
+    font-weight: normal !important;
+  }
+}

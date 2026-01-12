@@ -1,0 +1,423 @@
+@import "./theme/default";
+@import "./theme/steel";
+@import "./theme/coffee";
+@import "./theme/fern";
+@import "./theme/plum";
+
+@import "./sidebar";
+@use "sass:map";
+
+/**
+* Theme Generator
+**/
+$fontWeight: (
+  100: 100,
+  200: 200,
+  300: 300,
+  400: 400,
+  500: 500,
+  600: 600,
+  700: 700,
+  800: 800,
+  900: 900,
+);
+
+/**
+* Function replace string
+**/
+@function str-replace($string, $search: " ", $replace: "+") {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace +
+      str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+}
+
+@mixin han-theme($theme-name, $theme-map) {
+  [data-theme-mode="#{$theme-name}"] {
+    @each $section, $map in $theme-map {
+      // ========== Common
+
+      @if ($section == colors) {
+        // ========== Colors
+        // @warn "Color object '#{$map}' in colors";
+        @each $color-name, $color in $map {
+          @if ($color-name == divider) {
+            --bs-border-color: #{$color};
+          } @else if($color-name == text) {
+            --bs-body-color: #{map-get($color, primary)};
+            --bs-text-primary: #{map-get($color, primary)};
+            --bs-text-secondary: #{map-get($color, secondary)};
+            .han-text-primary {
+              color: #{map-get($color, primary)};
+            }
+            .han-text-secondary {
+              color: #{map-get($color, secondary)} !important;
+            }
+            .col-form-label {
+              @extend .col-form-label;
+              color: #{map-get($color, secondary)};
+            }
+            .form-control {
+              @extend .form-control;
+              color: #{map-get($color, primary)};
+            }
+          } @else {
+            // ========== Root Variable
+            --bs-#{$color-name}: #{map-get($color, main)};
+            --bs-#{$color-name}-light: #{map-get($color, light)};
+            @if (map-get($color, dark) != null) {
+              $darkColor: map-get($color, dark);
+              --bs-#{$color-name}-semi-dark: #{rgba($darkColor, 0.8)}; // sidebar background only
+            }
+            --bs-#{$color-name}-dark: #{map-get($color, dark)};
+            --bs-#{$color-name}-lighter: #{map-get($color, lighter)};
+            --bs-#{$color-name}-darker: #{map-get($color, darker)};
+
+            // ========== BootStrap Customization
+            .han-color-#{$color-name} {
+              color: #{map-get($color, main)} !important;
+            }
+            .han-hover-bg-#{$color-name} {
+              &:hover {
+                background-color: #{map-get($color, main)} !important;
+                color: white !important;
+                border-color: #{map-get($color, main)} !important;
+              }
+            }
+            .han-hover-bg-#{$color-name}-dark {
+              &:hover {
+                background-color: #{map-get($color, dark)} !important;
+                color: white !important;
+                border-color: #{map-get($color, dark)} !important;
+              }
+            }
+            .han-color-#{$color-name}-light {
+              color: #{map-get($color, light)} !important;
+            }
+            .han-color-#{$color-name}-dark {
+              color: #{map-get($color, dark)} !important;
+            }
+            .han-color-#{$color-name}-lighter {
+              color: #{map-get($color, lighter)} !important;
+            }
+            .han-color-#{$color-name}-darker {
+              color: #{map-get($color, darker)} !important;
+            }
+            .han-bg-color-#{$color-name} {
+              background-color: #{map-get($color, main)} !important;
+            }
+            .han-bg-color-#{$color-name}-light {
+              background-color: #{map-get($color, light)} !important;
+            }
+            .han-bg-color-#{$color-name}-dark {
+              background-color: #{map-get($color, dark)} !important;
+            }
+            .han-bg-color-#{$color-name}-lighter {
+              background-color: #{map-get($color, lighter)} !important;
+            }
+            .han-bg-color-#{$color-name}-darker {
+              background-color: #{map-get($color, darker)} !important;
+            }
+            .bg-#{$color-name} {
+              background-color: #{map-get($color, main)} !important;
+            }
+            .han-badge-#{$color-name} {
+              color: #{map-get($color, main)} !important;
+              background-color: #{map-get($color, lighter)} !important;
+            }
+
+            // button
+            .btn-#{$color-name} {
+              --bs-btn-bg: #{map-get($color, main)};
+              --bs-btn-border-color: #{map-get($color, main)};
+              --bs-btn-hover-bg: #{map-get($color, dark)};
+              --bs-btn-hover-border-color: #{map-get($color, dark)};
+              --bs-btn-active-bg: #{map-get($color, main)};
+              --bs-btn-active-border-color: #{map-get($color, main)};
+              --bs-btn-disabled-color: white;
+              --bs-btn-disabled-bg: #{map-get($color, light)};
+              --bs-btn-disabled-border-color: #{map-get($color, light)};
+            }
+
+            .btn-outline-#{$color-name} {
+              --bs-btn-color: #{map-get($color, main)};
+              --bs-btn-border-color: #{map-get($color, main)};
+              --bs-btn-hover-bg: #{map-get($color, dark)};
+              --bs-btn-hover-border-color: #{map-get($color, dark)};
+              --bs-btn-active-bg: #{map-get($color, main)};
+              --bs-btn-active-border-color: #{map-get($color, main)};
+              --bs-btn-disabled-color: #{map-get($color, light)};
+              --bs-btn-disabled-bg: transparent;
+              --bs-btn-disabled-border-color: #{map-get($color, light)};
+              --bs-btn-hover-color: white;
+              --bs-btn-active-color: white;
+            }
+
+            @if ($color-name == grey) {
+              .btn-outline-#{$color-name} {
+                --bs-btn-border-color: #{map-get($color, lighter)};
+                --bs-btn-hover-bg: #{map-get($color, lighter)};
+                --bs-btn-hover-border-color: #{map-get($color, lighter)};
+              }
+            }
+
+            // Alert
+            .alert-#{$color-name} {
+              @if ($color-name == "warning") {
+                --bs-alert-color: #8a6d3b;
+                --bs-alert-bg: #fcf8e3;
+              } @else {
+                --bs-alert-color: #{map-get($color, main)};
+                --bs-alert-bg: #{map-get($color, lighter)};
+              }
+              border: none !important;
+              border-radius: 8px;
+            }
+
+            // === Global Pagination
+            @if ($color-name == primary) {
+              // input
+              input {
+                &:checked {
+                  color: #{map-get($color, main)};
+                  background-color: #{map-get($color, main)};
+                  border-color: #{map-get($color, main)};
+                }
+                &[type="checkbox"],
+                &[type="radius"] {
+                  &:focus {
+                    box-shadow: 0 0 0 0.1rem #{map-get($color, lighter)};
+                  }
+                }
+              }
+
+              .pagination {
+                --bs-pagination-active-bg: #{map-get($color, main)};
+                --bs-pagination-active-border-color: #{map-get($color, main)};
+              }
+            } @else if($color-name == background) {
+              --bs-bg-soft-grey: #{map-get($color, softGrey)};
+              --bs-bg-light-grey: #{map-get($color, lightGrey)};
+              .han-bg-color-soft-grey {
+                background-color: var(--bs-bg-soft-grey) !important;
+              }
+              .han-bg-color-light-grey {
+                background-color: var(--bs-bg-light-grey) !important;
+              }
+
+              .btn-action {
+                --bs-btn-bg: #{map-get($color, softGrey)} !important;
+                --bs-btn-border-color: #{map-get($color, softGrey)} !important;
+                --bs-btn-hover-bg: #{map-get($color, softGrey)};
+                --bs-btn-hover-border-color: #{map-get($color, softGrey)};
+                //--bs-btn-active-bg: #{map-get($color, light)};
+                //--bs-btn-active-border-color: #{map-get($color, light)};
+                //--bs-btn-disabled-color: white;
+                //--bs-btn-disabled-bg: #{map-get($color, light)};
+                //--bs-btn-disabled-border-color: #{map-get($color, light)};
+              }
+            }
+
+            // ========== Hanbiro: Global Style
+            .han-btn-#{$color-name} {
+              background-color: #{map-get($color, main)};
+              color: rgb(41, 41, 41);
+              &:hover {
+                background-color: #a6b0cf;
+                color: #{map-get($color, main)};
+              }
+            }
+
+            .han-btn-compose {
+              max-height: 36px !important;
+              max-width: 192px !important;
+              padding: 6px 16px;
+            }
+          }
+        }
+      } @else if($section == typography) {
+        // ========== Typography
+        @each $name, $value in $map {
+          --bs-fs-#{$name}: #{map-get($value, fontSize)};
+          #{$name} {
+            font-weight: map-get($value, fontWeight);
+            font-size: map-get($value, fontSize);
+          }
+          // ========== Hanbiro: Global Style
+          @if ($name == body1) {
+            .subject-detail {
+              font-weight: map-get($value, fontWeight);
+              font-size: map-get($value, fontSize);
+            }
+          }
+          @if ($name == h4) {
+            .modal-footer,
+            .action-form {
+              .btn {
+                font-weight: map-get($value, fontWeight);
+                font-size: map-get($value, fontSize);
+              }
+            }
+            .col-form-label {
+              @extend .col-form-label;
+              font-size: map-get($value, fontSize);
+            }
+          }
+          @if ($name == h5) {
+            label {
+              font-weight: 400;
+              font-size: map-get($value, fontSize);
+            }
+          }
+          .han-#{$name} {
+            font-weight: map-get($value, fontWeight);
+            font-size: map-get($value, fontSize) !important;
+
+            // ex: han-h5 han-fw-900
+            @each $number, $fontWeightValue in $fontWeight {
+              &.han-fw-#{$number} {
+                font-weight: $fontWeightValue !important;
+              }
+            }
+          }
+        }
+      } @else if($section == fontFamily) {
+        // ========== Font family
+        $font-replace: str-replace(#{$map});
+        // @import url("https://fonts.googleapis.com/css2?family=#{$font-replace}:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+        // ========== Root Variable
+        --bs-body-font-family: #{$map}, NotoSansKR, sans-serif;
+
+        // ========== BootStrap Customization
+        .btn {
+          --bs-btn-font-family: #{$map}, NotoSansKR, sans-serif;
+        }
+      } @else if($section == fontWeight) {
+        // ========== Font weight
+        @each $name, $value in $map {
+          // ========== Hanbiro: Global Style
+          --bs-fw-#{$name}: #{$value};
+          .han-fw-#{$name} {
+            font-weight: $value !important;
+          }
+          @if ($name == medium) {
+            .col-form-label {
+              @extend .col-form-label;
+              font-weight: $value;
+            }
+          }
+        }
+      } @else if($section == fontSize) {
+        --bs-body-font-size: #{$map};
+      }
+    }
+    --han-border-radius: 8px;
+  }
+}
+
+@mixin han-sidebar-theme($sidebar-mode) {
+  // $sidebar-mode: light, dark, brand
+  [han-sidebar-mode="#{$sidebar-mode}"] {
+    $sidebarThemeMode: map-get($sidebar, $sidebar-mode);
+    @if ($sidebarThemeMode != null) {
+      --sidebar-backgroundColor: #{map-get($sidebarThemeMode, "bgColor")};
+      --sidebar-search-backgroundColor: #{map-get($sidebarThemeMode, "searchBgColor")};
+      @if ($sidebar-mode == "light") {
+        --sidebar-backgroundColor-hover: var(--bs-bg-light-grey);
+        --sidebar-backgroundColor-active: var(--bs-bg-soft-grey);
+      } @else {
+        --sidebar-backgroundColor-hover: "transparent";
+        --sidebar-backgroundColor-active: "transparent";
+        .btn-receipts-menu {
+          &.mm-active {
+            border-color: var(--sidebar-color-active) !important;
+          }
+        }
+      }
+      --sidebar-color: #{map-get($sidebarThemeMode, "color")};
+      --sidebar-color-hover: #{map-get($sidebarThemeMode, "hoverColor")};
+      --sidebar-color-active: #{map-get($sidebarThemeMode, "activeColor")};
+      --sidebar-divider: #{map-get($sidebarThemeMode, "divider")};
+      // active sidebar menu
+      #sidebar-menu .mm-active {
+        border-radius: 4px;
+        color: var(--sidebar-color-active) !important;
+        a {
+          color: var(--sidebar-color-active) !important;
+          i {
+            color: var(--sidebar-color-active) !important;
+          }
+          span {
+            color: var(--sidebar-color-active);
+            &.badge {
+              color: var(--bs-white);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include han-theme(default, $default);
+@include han-theme(steel, $steel);
+@include han-theme(coffee, $coffee);
+@include han-theme(fern, $fern);
+@include han-theme(plum, $plum);
+
+// sidebar
+@include han-sidebar-theme("light");
+@include han-sidebar-theme("dark");
+@include han-sidebar-theme("brand");
+
+// base table
+thead,
+tbody,
+tfoot,
+tr,
+td,
+th {
+  border-color: inherit;
+  border-style: inherit;
+  border-width: inherit;
+}
+
+.btn-action {
+  color: var(--bs-text-secondary) !important;
+  &:hover {
+    color: var(--bs-text-primary) !important;
+    border-color: var(--bs-bg-light-grey) !important;
+    background: var(--bs-bg-light-grey) !important;
+  }
+  &-delete {
+    color: var(--bs-error) !important;
+    &:hover {
+      color: var(--bs-error-dark) !important;
+    }
+  }
+}
+
+.btn-action-icon {
+  border-color: transparent !important;
+  background: transparent !important;
+  color: var(--bs-grey) !important;
+  &:hover {
+    cursor: pointer !important;
+    border-color: var(--bs-bg-soft-grey) !important;
+    background: var(--bs-bg-soft-grey) !important;
+    color: var(--bs-grey-darker) !important;
+  }
+  &:disabled {
+    cursor: not-allowed !important;
+  }
+}
+
+.text-toolbar {
+  background-color: var(--bs-bg-soft-grey) !important;
+  border-color: var(--bs-bg-soft-grey) !important;
+}

@@ -1,0 +1,16 @@
+.mail-header {
+  height: 55px;
+  padding: 0 0 0 8px;
+  .mail-header-left {
+    .search-input {
+      padding-left: 16px !important;
+    }
+    .filter-button {
+      width: 38px;
+      height: 38px;
+    }
+  }
+  .btn.btn-refresh {
+    width: 38px;
+  }
+}

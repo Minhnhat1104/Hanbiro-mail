@@ -1,0 +1,26 @@
+
+ .btn-reload {
+   padding: 4px 8px;
+ }
+
+ .btn-reload i {
+   margin: 0 !important;
+ }
+
+ .writing-icon-reload{
+  display: flex;
+  justify-content: right;
+  margin-bottom: 16px;
+ }
+
+ .st-sg-mode {
+  background: #FFFFFF !important;
+  border: 1px solid #CED4DA;
+  border-radius: 4px;
+}
+
+
+.modal-footer {
+  display: flex;
+  justify-content: center;
+}

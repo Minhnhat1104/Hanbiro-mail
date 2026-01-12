@@ -1,0 +1,13 @@
+.ad-prior-approval-un-active {
+  border-radius: 60px;
+  background: #a9a1a1;
+  width: 11px;
+  height: 11px;
+}
+
+.ad-prior-approval-active {
+  border-radius: 60px;
+  background: #34c38f;
+  width: 11px;
+  height: 11px;
+}

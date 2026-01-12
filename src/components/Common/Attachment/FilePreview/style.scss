@@ -1,0 +1,39 @@
+.modal-dialog-centered {
+  justify-content: center;
+}
+.modal-dialog.modal-auto {
+  &:not(.modal-fullscreen) {
+    width: fit-content;
+    max-width: 90vw;
+    min-width: 500px;
+    @media (max-width: 400px) {
+      // max-width: fit-content;
+      min-width: 95%;
+      // @supports (min-width: -webkit-fill-available) {
+      //   min-width: -webkit-fill-available;
+      // }
+    }
+  }
+}
+.base-file-preview-modal {
+  &:not(.modal-fullscreen) {
+    height: calc(100% - 100px) !important;
+    @media screen and (min-width: 1280px) {
+      // max-width: 70vw !important;
+    }
+    img {
+      max-width: 100%;
+    }
+    iframe body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    &-scroll {
+      // overflow-x: hidden;
+      overflow-y: auto;
+      max-height: calc(100vh - 175px);
+    }
+  }
+}

@@ -1,0 +1,130 @@
+$fern: (
+  fontFamily: "Inter",
+  fontSize: 13px,
+  fontWeight: (
+    light: 300,
+    regular: 400,
+    medium: 500,
+    semibold: 600,
+    bold: 700
+  ),
+  colors: (
+    primary: (
+      lighter: #cddec7,
+      light: #a7c69d,
+      main: #82AE73,
+      dark: #5b7950,
+      darker: #415739,
+      contrastText: #fff
+    ),
+    secondary: (
+      lighter: #d6b9c0,
+      light: #be8f9b,
+      main: #ae7382,
+      dark: #8b5c68,
+      darker: #573941,
+      contrastText: #fff
+    ),
+    error: (
+      lighter: #ffebee,
+      light: #ef9a9a,
+      main: #ef5350,
+      dark: #d32f2f,
+      darker: #b71c1c,
+      contrastText: #fff
+    ),
+    warning: (
+      lighter: #fffde7,
+      light: #fff59d,
+      main: #ffee58,
+      dark: #fbc02d,
+      darker: #f57f17,
+      contrastText: #fff
+    ),
+    info: (
+      lighter: #e0f7fa,
+      light: #80deea,
+      main: #26c6da,
+      dark: #0097a7,
+      darker: #006064,
+      contrastText: #fff
+    ),
+    success: (
+      lighter: #e8f5e9,
+      light: #a5d6a7,
+      main: #66bb6a,
+      dark: #388e3c,
+      darker: #1b5e20,
+      contrastText: #fff
+    ),
+    text: (
+      primary: #001737,
+      secondary: #8392a5,
+      disabled: rgba(0, 0, 0, 0.38)
+    ),
+    background: (
+      paper: #fff,
+      default: #fff,
+      softGrey: #F4F4F4,
+      lightGrey: #F9F9F9
+    ),
+    grey: (
+      lighter: #bebebe,
+      light: #a9a9a9,
+      main: #7f7f7f,
+      dark: #6a6a6a,
+      darker: #3f3f3f,
+      contrastText: #fff
+    ),
+    divider: #D9D9D9
+  ),
+  typography: (
+    h1: (
+      fontWeight: 600,
+      fontSize: 38px
+    ),
+    h2: (
+      fontWeight: 600,
+      fontSize: 24px
+    ),
+    h3: (
+      fontWeight: 600,
+      fontSize: 16px
+    ),
+    h4: (
+      fontWeight: 600,
+      fontSize: 14px
+    ),
+    h5: (
+      fontWeight: 600,
+      fontSize: 13px
+    ),
+    h6: (
+      fontWeight: 500,
+      fontSize: 10px
+    ),
+    caption: (
+      fontWeight: 500,
+      fontSize: 12px
+    ),
+    body1: (
+      fontWeight: 400,
+      fontSize: 13px
+    ),
+    body2: (
+      fontWeight: 400,
+      fontSize: 12px
+    ),
+    subtitle1: (
+      fontSize: 14px,
+      fontWeight: 600
+    ),
+    subtitle2: (
+      fontSize: 12px,
+      fontWeight: 600
+    ),
+    overline: (
+      lineHeight: 1.66
+    )
+  )
+);

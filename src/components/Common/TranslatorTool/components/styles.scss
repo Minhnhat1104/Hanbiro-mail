@@ -1,0 +1,33 @@
+.lang-custom-input {
+  display: flex;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid var(--bs-input-border-color);
+  .flag-wrapper {
+    padding: 0 12px;
+    border-right: 1px solid var(--bs-input-border-color);
+    display: flex;
+    align-items: center;
+    background-color: var(--bs-bg-soft-grey);
+  }
+  input {
+    border: none !important;
+  }
+}
+
+.lang-add-select-key {
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid var(--bs-input-border-color);
+  .select-menu-wrapper {
+    height: 36px;
+    display: flex;
+    align-items: center;
+    background-color: var(--bs-primary-dark);
+  }
+  input {
+    border: none !important;
+  }
+}

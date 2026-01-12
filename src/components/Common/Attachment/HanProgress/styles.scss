@@ -1,0 +1,19 @@
+.new-mail-han-progress {
+  .progress-container {
+    position: relative;
+  }
+  .progress {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+  }
+  .text-progress {
+    color: #43a047;
+    font-size: 12px !important;
+  }
+}

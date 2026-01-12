@@ -1,0 +1,7 @@
+.base-icon-hidden {
+  display: none;
+}
+
+.form-control:hover .base-icon-hidden {
+  display: block;
+}

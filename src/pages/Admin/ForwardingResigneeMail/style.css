@@ -1,0 +1,41 @@
+
+
+.ad-fore-btn-re {
+
+  background: #FF6262;
+  border: 1px solid #FF6262
+}
+
+.ad-fore-btn-co {
+  border: 1px solid #CED4DA;
+  border-radius: 4px;
+  margin-top: 20px;
+}
+
+.ad-fore-btn-for {
+  border-bottom: 1px solid #EFF2F7;
+  padding: 16px 24px;
+  font-weight: 500
+}
+
+.ad-fore-btn-for-1 {
+  border-bottom: 1px solid #EFF2F7;
+  padding: 30px 24px 16px 24px
+}
+
+.ad-fore-btn-ca {
+  margin-right: "3px";
+  background: #74788D;
+  border: 1px solid #74788D
+}
+.ad-fore-btn-icon {
+  margin: auto 0;
+  color: #34C38F
+}
+.ad-fore-btn-rl {
+  border: 1px solid #0066FF;
+  border-radius: 4px;
+  color: #0066FF;
+  margin: 3px 3px;
+  background-color: white;
+}

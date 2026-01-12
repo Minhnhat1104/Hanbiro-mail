@@ -1,0 +1,28 @@
+.mail-upload-file {
+  max-height: 200px;
+  padding-right: 8px;
+  padding-top: 4px;
+  overflow: hidden auto;
+  .list-file__item {
+    flex: 0 0 calc(50% - 3px);
+    &:nth-child(even) {
+      .view-item-file {
+        border-right: none;
+      }
+    }
+    @media (max-width: 500px) {
+      .view-item-file {
+        border-right: none;
+      }
+    }
+  }
+}
+.common-han-modal-clouddisk {
+  .list-file {
+    .att-icon {
+      svg {
+        width: 14px;
+      }
+    }
+  }
+}

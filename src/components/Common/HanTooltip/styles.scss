@@ -1,0 +1,21 @@
+.rc-tooltip-placement-top {
+  .rc-tooltip-arrow {
+    bottom: 4px !important;
+  }
+}
+.rc-tooltip-placement-bottom {
+  .rc-tooltip-arrow {
+    top: 4px !important;
+  }
+}
+
+.rc-tooltip-placement-right {
+  .rc-tooltip-arrow {
+    left: 4px !important;
+  }
+}
+.rc-tooltip-placement-left {
+  .rc-tooltip-arrow {
+    right: 4px !important;
+  }
+}

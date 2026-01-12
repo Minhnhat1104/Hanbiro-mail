@@ -1,0 +1,199 @@
+.ai-modal {
+  .modal-content {
+    border: none;
+    border-radius: 10px;
+  }
+  .modal-header {
+    // background-color: var(--bs-primary);
+    // color: white;
+    border: none;
+    .ai-header-title {
+      width: 100%;
+      color: var(--bs-primary);
+      font-size: 18px !important;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2px;
+    }
+  }
+  .modal-body.ai-modal-body {
+    min-height: 30vh !important;
+    padding: 8px;
+    padding-top: 0;
+    padding-bottom: 8px;
+
+    &.attach {
+      padding-bottom: 36px;
+      .ai-body {
+        min-height: calc(30vh - 36px);
+        max-height: calc(100vh - 200px - 36px);
+
+        // .ai-summary-item-content {
+        //   min-height: calc(30vh - 32px - 36px);
+        // }
+
+        // .ai-skeleton {
+        //   min-height: calc(30vh - 32px - 36px);
+        // }
+      }
+    }
+    .ai-body {
+      padding: 16px;
+      border-radius: 10px;
+      background-color: var(--bs-primary-lighter);
+      // background-color: var(--bs-bg-soft-grey);
+      min-height: calc(30vh - 8px);
+      max-height: calc(100vh - 200px - 8px);
+      scrollbar-width: none;
+
+      // .ai-skeleton {
+      //   min-height: calc(30vh - 32px - 8px);
+      // }
+
+      // .ai-summary-item-content {
+      //   display: flex;
+      //   min-height: calc(30vh - 32px - 8px);
+      //   flex-direction: column;
+
+      //   .ai-content-translate {
+      //     flex-grow: 1;
+      //     & > div {
+      //       width: 100% !important;
+      //     }
+      //   }
+      // }
+
+      .ai-content-translate {
+        & > div {
+          max-width: 100% !important;
+        }
+      }
+    }
+
+    .ai-header {
+      .ai-header-right {
+        width: 30%;
+      }
+    }
+    .ai-sub-title {
+      font-size: 13px;
+      // font-weight: 500;
+      color: var(--bs-text-secondary);
+    }
+    .ai-content {
+      flex-grow: 1;
+      padding: 16px;
+      border-radius: 10px;
+      background-color: white;
+      // background-color: var(--bs-bg-soft-grey);
+      min-height: 200px;
+      .ai-purpose {
+        // padding: 12px 16px;
+        display: flex;
+        gap: 2px;
+        flex-direction: column;
+        // border-radius: 5px;
+        // border-left: 5px solid var(--bs-primary);
+        // background-color: var(--bs-bg-soft-grey);
+        span {
+          font-weight: bolder;
+          // color: var(--bs-text-secondary);
+        }
+        br {
+          display: none;
+        }
+        .ai-purpose-content {
+          padding-left: 16px;
+          font-weight: normal;
+          .bullet::before {
+            content: "•";
+            margin-left: 0;
+            margin-right: 9px;
+          }
+        }
+      }
+      &-translate {
+        padding: 16px;
+        border-radius: 10px;
+        // background-color: var(--bs-bg-light-grey);
+        background-color: white;
+      }
+      span.bullet::before {
+        content: "•";
+        margin-left: 16px;
+        margin-right: 4px;
+      }
+    }
+    .ai-skeleton {
+      .placeholder {
+        border-radius: 10px;
+        background-color: var(--bs-grey-lighter);
+      }
+      .bullet {
+        width: 8px;
+        height: 8px;
+        font-size: 8px;
+        border-radius: 50%;
+      }
+    }
+    .ai-translate-content-placeholder {
+      border-radius: 10px;
+      // background-color: var(--bs-bg-soft-grey);
+      background-color: white;
+    }
+    .btn-ai-action {
+      // background-color: var(--bs-primary-lighter) !important;
+      // color: var(--bs-primary) !important;
+      // background-color: var(--bs-bg-light-grey) !important;
+      background-color: white;
+      color: var(--bs-primary);
+      height: 28px;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      // &:hover {
+      //   color: var(--bs-grey-dark);
+      // }
+      &.btn-copy {
+        padding: 0;
+        width: 28px;
+      }
+    }
+  }
+}
+
+.ai-button-view.btn-action {
+  padding-left: 4px !important;
+  padding-right: 4px !important;
+  height: 24px !important;
+  width: auto !important;
+  background-color: white !important;
+  border: 1px solid var(--bs-text-secondary) !important;
+  &:hover {
+    border: 1px solid var(--bs-text-primary) !important;
+  }
+  span {
+    font-size: 13px !important;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.blink {
+  font-size: 1rem;
+  font-weight: bold;
+  animation: blink 1s infinite;
+  text-align: center;
+  margin: 30px 0;
+}

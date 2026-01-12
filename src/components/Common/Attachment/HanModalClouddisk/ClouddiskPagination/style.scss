@@ -1,0 +1,21 @@
+.clouddisk-pagination {
+  &__button {
+    display: grid;
+    place-items: center;
+    border: 1px solid #ced4da !important;
+    border-radius: 0 !important;
+    span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &:nth-child(2) {
+      transform: translateX(-1px);
+    }
+    &:disabled,
+    &:disabled * {
+      cursor: not-allowed;
+      pointer-events: fill !important;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+.base-modal {
+  .modal-header {
+    h2.modal-title {
+      width: calc(100% - 24px);
+      color: var(--bs-text-primary);
+      font-size: var(--bs-fs-h2);
+      font-weight: var(--bs-fw-semibold);
+    }
+    .btn-close {
+      display: block;
+      min-width: 16px;
+    }
+  }
+}

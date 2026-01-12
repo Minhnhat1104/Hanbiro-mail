@@ -1,0 +1,27 @@
+.btn {
+  &-reload {
+    padding: 4px 8px;
+    margin-right: 4px;
+    & i {
+      margin: 0 !important;
+    }
+  }
+  &-block {
+    margin-right: 4px;
+  }
+  &-delete {
+    height: 30px;
+  }
+}
+
+.p {
+  &-btn {
+    &-delete {
+      padding: 5px 7px;
+    }
+  }
+}
+
+.empty-item {
+  height: 18px;
+}

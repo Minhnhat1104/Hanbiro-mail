@@ -1,0 +1,10 @@
+// @ts-nocheck
+export const EMAIL_RECENT_LIST = "email/recentlist"
+export const EMAIL_WRITE = "email/write/"
+export const EMAIL_SMTP = "/email/smtp/sentlist"
+export const SET_PREVIEW_MODE = "email/setviewmode"
+export const URL_EMAIL_TIMEZONE = "nmail/timezone"
+export const EMAIL_SIGNATURE_INFO = "email/signature/info"
+export const EMAIL_WRITEFORM = "email/writeform"
+export const LETTER_TEMPLATES = "common/letter_templates"
+export const MAIL_COMPOSE_SENT_LIMIT = "email/sentlimit/cllimit"

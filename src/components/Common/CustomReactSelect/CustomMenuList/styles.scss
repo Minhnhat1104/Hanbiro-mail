@@ -1,0 +1,26 @@
+.tab-options {
+  border-top: 1px solid var(--bs-border-color);
+  .tab-item {
+    padding: 6px 10px;
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+    border-right: 1px solid var(--bs-border-color);
+  }
+  .tab-active {
+    border-top: 2px solid var(--bs-primary);
+  }
+}
+
+.important {
+  &-list {
+    min-height: 120px;
+  }
+  &-item {
+    padding: 8px 12px;
+    cursor: default;
+    &:hover {
+      background-color: var(--bs-primary);
+      color: var(--bs-white);
+    }
+  }
+}

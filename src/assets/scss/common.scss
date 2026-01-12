@@ -1,0 +1,220 @@
+::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: #b7b7b7;
+  box-shadow: inset 0px 0px 5px white;
+}
+
+::-webkit-scrollbar-thumb,
+*::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #b7b7b7;
+}
+
+::-webkit-scrollbar-thumb:focus,
+*::-webkit-scrollbar-thumb:focus {
+  background-color: #adadad;
+}
+
+::-webkit-scrollbar-thumb:active,
+*::-webkit-scrollbar-thumb:active {
+  background-color: #adadad;
+}
+
+::-webkit-scrollbar-thumb:hover,
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #adadad;
+}
+
+::-webkit-scrollbar-corner,
+*::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+// Custom cursor
+.cursor {
+  &-default {
+    cursor: default !important;
+  }
+  &-pointer {
+    cursor: pointer !important;
+  }
+  &-not-allowed {
+    cursor: not-allowed !important;
+  }
+}
+
+// Custom width
+.w {
+  &-5 {
+    width: 5%;
+  }
+  &-10 {
+    width: 10%;
+  }
+  &-15 {
+    width: 15%;
+  }
+  &-20 {
+    width: 20%;
+  }
+}
+
+@each $name, $color in $colors {
+  .color-#{$name} {
+    color: $color !important;
+  }
+  .background-#{$name} {
+    background: $color !important;
+  }
+}
+
+// button: add, reload, remove
+.write-form {
+  margin-bottom: 16px;
+
+  .btn {
+    float: right;
+    border-radius: 4px;
+    margin: 0 4px;
+  }
+
+  .btn-reload {
+    padding: 4px 8px;
+  }
+}
+
+// action button in table: up, down, delete
+.action-button {
+  display: flex;
+
+  .btn {
+    margin: 0 8px;
+  }
+}
+
+// button: save, reset
+.action-form {
+  display: flex;
+  justify-content: center;
+  // margin-bottom: 12px;
+
+  .btn {
+    margin: 0 4px;
+  }
+}
+
+.table {
+  &-form {
+    margin: 12px 0;
+  }
+}
+
+// head of page: search box and button group
+.message-navbar {
+  display: flex;
+  justify-content: space-between;
+  @media (max-width: 500px) {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+// Custom z-index for ToastProvider from react-toast-notifications
+.react-toast-notifications {
+  &__container {
+    z-index: 9999 !important;
+  }
+  &__toast {
+    width: 350px !important;
+    &__icon-wrapper {
+      padding-top: 18px !important;
+    }
+  }
+}
+
+// Custom color for <pre> tag
+.text-pre {
+  & > pre {
+    color: $text-muted !important;
+  }
+}
+
+// Custom scroll box for modal
+.scroll {
+  &-box {
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
+  }
+  &-sent-list {
+    overflow-y: scroll !important;
+    max-height: 150px !important;
+  }
+  &-view-mail {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    // max-height: calc(100vh - 350px);
+  }
+}
+
+// Custom compose modal
+// .compose-modal {
+//   position: fixed;
+//   right: 24px;
+//   bottom: 0;
+//   z-index: 1049; // This is because z-index of organization modal is 1050 (Default value: 1050)
+//   max-width: 800px;
+//   width: 100%;
+//   box-shadow: $box-shadow-lg;
+//   &-scroll-box {
+//     @extend .scroll-box;
+//     max-height: calc(100vh - 200px);
+//   }
+//   &-header {
+//     // background: darken($primary, 40%);
+//     border-bottom: 1px solid $gray-400;
+//   }
+//   &-minimize {
+//     @extend .compose-modal;
+//     max-width: 300px;
+//   }
+// }
+
+// Custom button to the top
+.btn-to-top {
+  position: fixed;
+  bottom: 50px;
+  right: 60px;
+}
+
+.icon-folder {
+  color: #f2c94c;
+}
+
+.border-top-right-radius-0 {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+.open-hbcompose {
+  cursor: pointer;
+}
+.mail-badge-new {
+  animation: blink-smooth 1s infinite;
+}
+@keyframes blink-smooth {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.hover-underline:hover {
+  text-decoration: underline;
+}

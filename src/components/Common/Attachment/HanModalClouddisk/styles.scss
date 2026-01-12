@@ -1,0 +1,248 @@
+#clouddisk-modal {
+  .modal-body {
+    height: 80vh;
+  }
+}
+
+.common-han-modal-clouddisk {
+  .nav-link {
+    padding: 12px 0 !important;
+    svg {
+      width: 18px !important;
+      margin-right: 6px !important;
+    }
+  }
+  .btn-filter-search {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  .dropdown-custom {
+    width: auto !important;
+  }
+  .input-search-clouddisk {
+    border: none;
+    padding-left: 0;
+    background-color: transparent;
+    &:focus {
+      background-color: transparent;
+    }
+  }
+  .co-manage-han-icon-file svg {
+    width: 36px;
+    height: auto;
+  }
+  .choosed-item {
+    background-color: var(--bs-bg-soft-grey) !important;
+    .link-02 {
+      color: var(--bs-primary) !important;
+    }
+  }
+
+  .container-select-file {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-left: 10px;
+
+    height: calc(80vh - 350px) !important;
+    overflow-y: overlay;
+    .view-item-file {
+      border-right: none;
+    }
+  }
+  .react-datepicker-wrapper {
+    width: 100% !important;
+    .input-group {
+      background-color: var(--bs-bg-soft-grey);
+      border-radius: 4px;
+      input {
+        height: 37px !important;
+        border: none !important;
+        background-color: var(--bs-bg-soft-grey);
+      }
+      .input-group-append {
+        height: 37px !important;
+        border: none !important;
+        button {
+          height: 100%;
+          &:focus {
+            border: none !important;
+          }
+        }
+      }
+    }
+  }
+  .view-form-setting {
+    margin-top: 1rem;
+    &__content {
+      .input-group {
+        background-color: var(--bs-bg-soft-grey);
+        border-radius: 4px;
+        input {
+          height: 37px !important;
+          border: none !important;
+          background-color: var(--bs-bg-soft-grey);
+        }
+      }
+    }
+    &__label {
+      min-width: 140px;
+    }
+  }
+  .view-no-files {
+    height: 100% !important;
+  }
+
+  .dropdown-menu {
+    &.dropdown-menu-right {
+      right: 0;
+    }
+  }
+
+  .context-dropdown-file {
+    .dropdown-link {
+      display: flex;
+      align-items: center;
+      color: rgba(131, 146, 165, 0.5);
+      svg {
+        width: 18px;
+        height: 18px;
+      }
+      &:hover,
+      &:focus {
+        color: #1b2e4b;
+      }
+    }
+
+    .dropdown-item {
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      padding: 5px 10px;
+      svg {
+        width: 14px;
+        height: 14px;
+        stroke-width: 2.5px;
+        margin-right: 10px;
+        color: #8392a5;
+      }
+    }
+  }
+}
+
+.common-han-modal-root {
+  padding: 0px !important;
+  overflow-y: hidden !important;
+}
+.custom-clouddisk {
+  background-color: rgb(248, 249, 252);
+  padding: 9px 15px;
+  border-radius: 4px;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .custom-clouddisk-buttons {
+    width: 100%;
+    padding: 10px;
+    border: 1px red solid;
+    border-width: 2px;
+    border-radius: 4px;
+    border-color: rgb(171, 197, 234);
+    border-style: dashed;
+    background-color: rgb(248, 249, 252);
+    color: rgb(189, 189, 189);
+    outline: none;
+    transition: border 0.24s ease-in-out 0s;
+    text-align: center;
+    &:hover {
+      background-color: transparent;
+    }
+  }
+  span {
+    color: #007bff;
+    margin-left: 4px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+}
+.content-clouddisk {
+  height: calc(100% - 47px);
+  // border: 1px solid var(--bs-border-color);
+  background-color: white !important;
+  // padding: 1rem;
+  border-radius: 4px;
+  & > div > div > svg {
+    width: 100%;
+  }
+}
+.container-clouddisk__header {
+  background-color: var(--bs-bg-soft-grey);
+}
+.clouddisk-view__mode {
+  padding: 8px;
+  height: 100%;
+  border-radius: 4px;
+  padding: 8px;
+  .btn-view {
+    padding: 8px;
+    border-radius: 4px;
+    color: var(--bs-text-secondary);
+    &.active {
+      box-shadow: 0px 2px 4px 0px #0000001a;
+      background-color: white;
+      color: var(--bs-text-primary);
+      border: none;
+    }
+  }
+}
+.right-content {
+  .content-clouddisk-right {
+    .file-selected-item {
+      .att-icon.co-manage-han-icon-file {
+        svg {
+          width: 16px !important;
+        }
+      }
+    }
+  }
+}
+#clouddisk-modal {
+  .modal-body {
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+  * ::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+    opacity: 0.2;
+  }
+
+  * ::-webkit-scrollbar-track {
+    background: #c0ccda1a;
+  }
+
+  * ::-webkit-scrollbar-thumb {
+    background-color: #c0ccda !important;
+    border: 2px solid transparent;
+    border-radius: 9px;
+    background-clip: content-box;
+  }
+
+  * ::-webkit-scrollbar-thumb:hover {
+    background: #8392a5 !important;
+  }
+
+  * .custom-scroll:hover::-webkit-scrollbar {
+    opacity: 1;
+  }
+
+  * .custom-scroll:hover::-webkit-scrollbar-thumb {
+    background: #8392a5;
+  }
+
+  * .custom-scroll:hover::-webkit-scrollbar-track {
+    background-color: white;
+  }
+}

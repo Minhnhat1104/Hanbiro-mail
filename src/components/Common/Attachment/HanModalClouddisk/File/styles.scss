@@ -1,0 +1,77 @@
+.modal-clouddisk-file {
+  position: relative;
+  height: 200px;
+  .card-file {
+    // border: 1px solid var(--bs-border-color);
+    background-color: var(--bs-bg-soft-grey);
+    min-width: 11rem;
+    margin-bottom: 0;
+  }
+  .choosed-item {
+    background-color: var(--bs-bg-soft-grey) !important;
+    .link-02 {
+      color: var(--bs-primary) !important;
+    }
+  }
+  .file-view-check {
+    border: 1px solid #e1e5ed;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #e5e9f3;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    z-index: 2;
+    cursor: pointer;
+    svg {
+      stroke: #7987a1;
+    }
+  }
+  .file-view-check-active {
+    background-color: var(--bs-primary);
+    // background-color: #10b759;
+    color: var(--bs-white);
+    svg {
+      stroke: var(--bs-white) !important;
+    }
+  }
+}
+.file-list-item {
+  height: 30px;
+  // padding-right: 2rem !important;
+
+  cursor: pointer;
+  h6 a {
+    color: var(--bs-grey);
+  }
+  &__info {
+    width: calc(100% - 36px);
+  }
+  &__content {
+    width: calc(100% - 65px);
+  }
+  &__name {
+    width: calc(100% - 30px);
+  }
+  &__icon {
+    & .co-manage-han-icon-file {
+      width: 100%;
+    }
+    width: 20px;
+    height: 20px;
+    svg {
+      width: 100% !important;
+      height: 100% !important;
+      aspect-ratio: 1;
+    }
+  }
+  &__size {
+    width: 65px;
+    text-align: right;
+  }
+}

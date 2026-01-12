@@ -1,0 +1,64 @@
+.new-mail-han-file {
+  .container-text-more {
+    -webkit-box-flex: 1;
+    flex: 1;
+    min-width: 0;
+    width: 0;
+  }
+  .text-more-flex {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .view-icon-file {
+    // background-color: rgb(245, 246, 250);
+    // padding: 4px;
+    // margin-left: -12px;
+    // height: 63px;
+    // width: 46px;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    // border-top-left-radius: 4px;
+    // border-bottom-left-radius: 4px;
+  }
+  .view-item-file {
+    position: relative;
+    border-right: 1px solid rgba(72, 94, 144, 0.16);
+    // border-bottom: 1px solid rgba(72, 94, 144, 0.16);
+    padding: 4px 12px;
+    background-color: #fff;
+    // border-radius: 0.25rem;
+    transition: all 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
+    margin: 5px 0px 5px 0px;
+    height: 45px;
+  }
+  .view-btn-close {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    cursor: pointer;
+    svg {
+      stroke: #c0ccda !important;
+      width: 18px !important;
+      height: 18px !important;
+    }
+  }
+}
+.file-icon {
+  color: var(--bs-grey);
+}
+.list-file {
+  .att-icon {
+    svg {
+      width: 14px;
+    }
+  }
+}

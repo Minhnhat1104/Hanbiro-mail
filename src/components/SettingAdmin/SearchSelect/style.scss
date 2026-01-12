@@ -1,0 +1,34 @@
+.search-user {
+  padding: unset !important;
+}
+
+.bg-search {
+  background: #f6f6f6;
+  border: none;
+  border-radius: 30px;
+  padding-left: 40px;
+  &:focus {
+    background: #f6f6f6;
+  }
+}
+
+.left-icon {
+  position: absolute;
+  font-size: 16px;
+  left: 13px;
+  top: 0;
+  line-height: 38px;
+}
+
+.right-icon {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 13px;
+  font-size: 10px;
+  line-height: 38px;
+}
+
+.pl-40 {
+  padding-left: 40px !important;
+}

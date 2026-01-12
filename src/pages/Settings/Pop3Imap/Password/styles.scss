@@ -1,0 +1,19 @@
+.app-password-content {
+  .what-is-app-password {
+    .red {
+      color: var(--bs-danger);
+    }
+  }
+  .mail-app-password {
+    .app-password-input {
+      position: relative;
+      i {
+        padding: 4px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 8px;
+      }
+    }
+  }
+}

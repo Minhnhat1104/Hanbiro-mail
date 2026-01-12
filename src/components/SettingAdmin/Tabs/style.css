@@ -1,0 +1,23 @@
+/* li .nav-link.active2 {
+  background-color: transparent !important;
+  color: var(--bs-primary) !important;
+  border-radius: 3px !important;
+  border-bottom: 2px solid var(--bs-primary) !important;
+} */
+
+/* .nav-item {
+  padding: 8px 16px;
+  &:hover {
+    color: var(--bs-primary);
+  }
+  &.active {
+    border: none;
+    color: var(--bs-primary);
+    border-bottom: 2px solid var(--bs-primary);
+  }
+} */
+
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--bs-dark) !important;
+}

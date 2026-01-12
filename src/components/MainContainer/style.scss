@@ -1,0 +1,42 @@
+.page-content {
+  .container-breadcrumbs {
+    .left-panel {
+      width: 236px;
+    }
+    .right-panel {
+      margin-left: 24px;
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .base-button-dropdown:first-child {
+      .dropdown-menu {
+        left: 0px !important;
+      }
+    }
+    .page-title {
+      font-weight: 500;
+      padding-left: 12px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.page-content-mobile {
+  padding-top: 55px;
+}
+
+.go-to-top-button {
+  position: fixed;
+  right: 25px !important;
+  bottom: 10px !important;
+}
+.nav-tabs-custom .nav-item .nav-link.active .han-h4 {
+  color: var(--bs-primary) !important;
+  font-weight: var(--bs-fw-semibold) !important;
+}
+
+.nav-tabs-custom .nav-item .nav-link::after {
+  background: var(--bs-primary) !important;
+}

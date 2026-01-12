@@ -1,0 +1,31 @@
+.dropdown-item-custom {
+  width: 356px;
+}
+
+.date-picker-form {
+  background-color: var(--bs-custom-white);
+  border: 1px solid var(--bs-input-border-color);
+  border-radius: 0.25rem;
+  color: var(--bs-gray-700);
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  line-height: 1.5;
+  padding: 0.47rem 0.75rem;
+  width: 150px;
+  &.start {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: none;
+  }
+  &.end {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+.react-datepicker__day--disabled {
+  color: #ccc !important;
+}
+.react-datepicker__day--outside-month {
+  color: #ccc !important;
+}

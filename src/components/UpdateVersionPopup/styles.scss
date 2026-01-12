@@ -1,0 +1,38 @@
+.update-popup {
+  // width: 415px;
+  position: fixed;
+  bottom: 20px;
+  right: 24px;
+  background-color: #fbfbfb;
+  padding: 1rem;
+  border-radius: 8px;
+  animation: updateAppear 0.5s ease-in-out;
+  box-shadow: #4145581a 0px 7px 14px 0px, #00000012 0px 3px 6px 0px;
+  overflow: hidden;
+  z-index: 99;
+  .loading-update {
+    width: 30%;
+  }
+}
+.update-popup::after {
+  content: "";
+  background: #007bfc17;
+  width: 100px;
+  height: 400px;
+  position: absolute;
+  top: -145px;
+  left: 30px;
+  transform: rotate(45deg);
+  z-index: 0;
+}
+
+@keyframes updateAppear {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

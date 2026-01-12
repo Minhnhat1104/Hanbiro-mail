@@ -1,0 +1,13 @@
+.write-todo-modal,
+.write-project-modal,
+.write-calendar-modal {
+  .base-modal.modal-body {
+    .row {
+      label.col-form-label {
+        color: var(--han-text-primary);
+        font-size: 13px;
+        font-weight: 500;
+      }
+    }
+  }
+}

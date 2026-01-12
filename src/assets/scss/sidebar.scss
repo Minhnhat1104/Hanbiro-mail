@@ -1,0 +1,26 @@
+$sidebar: (
+  light: (
+    bgColor: var(--bs-white),
+    searchBgColor: var(--bs-bg-soft-grey),
+    color: var(--bs-text-primary),
+    hoverColor: var(--bs-text-primary),
+    activeColor: var(--bs-primary),
+    divider: var(--bs-border-color),
+  ),
+  dark: (
+    bgColor: "#313a46",
+    searchBgColor: "#bccee4",
+    color: var(--bs-text-secondary),
+    hoverColor: "#bccee4",
+    activeColor: var(--bs-white),
+    divider: var(--bs-text-secondary),
+  ),
+  brand: (
+    bgColor: var(--bs-primary-semi-dark),
+    searchBgColor: var(--bs-white),
+    color: "#cedce4",
+    hoverColor: "#eaf1f7",
+    activeColor: var(--bs-white),
+    divider: "#cedce4",
+  ),
+);

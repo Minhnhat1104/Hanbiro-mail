@@ -1,0 +1,31 @@
+// li .nav-link.active2 {
+//   background-color: transparent !important;
+//   color: var(--bs-primary) !important;
+//   // border-radius: 3px !important;
+//   border-bottom: 2px solid var(--bs-primary) !important;
+// }
+.fetching-tab {
+  background: var(--bs-bg-light-grey);
+  border-radius: 4px;
+  .nav-item {
+    padding: 8px 16px;
+    font-weight: 500;
+    margin-right: 4px;
+    &:hover {
+      color: var(--bs-primary);
+    }
+    &.active {
+      border: none;
+      border-radius: 4px;
+      font-weight: 600;
+      color: var(--bs-primary);
+      background: var(--bs-bg-soft-grey);
+      //border-bottom: 2px solid var(--bs-primary);
+    }
+  }
+}
+
+.st-fet-card {
+  background-color: unset !important;
+  margin-top: 10px;
+}

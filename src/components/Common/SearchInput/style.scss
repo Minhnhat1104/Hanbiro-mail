@@ -1,0 +1,27 @@
+.search-input {
+  width: 350px;
+  .form-control {
+    border: none;
+    height: 38px;
+    padding-left: 40px !important;
+    padding-right: 20px;
+    background-color: var(--bs-bg-soft-grey) !important;
+    border-radius: 4px;
+    border: 0 !important;
+    //border: 1px solid var(--bs-border-color);
+    box-shadow: none;
+  }
+  i {
+    position: absolute;
+    z-index: 10;
+    font-size: 16px;
+    line-height: 38px;
+    top: 0;
+    &.search-icon {
+      left: 13px;
+    }
+    &.filter-icon {
+      right: 4px;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.mail-user-item {
+  .item-user {
+    max-height: 30px;
+    width: 100%;
+    background-color: var(--bs-bg-light-grey);
+    color: var(--bs-text-primary);
+    display: flex;
+    padding: 0px 10px;
+    margin-bottom: 2px;
+    svg {
+      cursor: pointer;
+    }
+
+    &:hover {
+      background-color: var(--bs-bg-soft-grey);
+    }
+
+    &.selected {
+      background-color: var(--bs-primary-lighter);
+    }
+  }
+}

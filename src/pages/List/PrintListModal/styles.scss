@@ -1,0 +1,24 @@
+.modal-body {
+  .cancel-sending {
+    line-height: 1;
+    font-weight: normal;
+    background-color: #fa8c16;
+    border-radius: 4px;
+    padding: 4px;
+    text-align: center;
+    color: white;
+    margin-right: 8px;
+    &.large-text {
+      min-width: 140px;
+    }
+    &.complete {
+      background-color: #34c38f;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

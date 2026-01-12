@@ -1,0 +1,12 @@
+.alias-domain__checkbox:checked {
+  background-color: var(--bs-primary) !important;
+  border-color: #0066ff !important;
+}
+.alias-headline {
+  padding: 0.75rem 0.5rem;
+  background-color: #eff2f7;
+  border-radius: 0.25rem 0.25rem 0 0;
+  * {
+    margin: 0;
+  }
+}

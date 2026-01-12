@@ -1,0 +1,15 @@
+.han-drap-drop {
+  background-color: white;
+  padding: 15px 20px;
+  cursor: pointer;
+  .han-drap-drop-wrapper {
+    min-height: 5rem;
+  }
+}
+.han-drap-drop-custom-padding {
+  padding: 0;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

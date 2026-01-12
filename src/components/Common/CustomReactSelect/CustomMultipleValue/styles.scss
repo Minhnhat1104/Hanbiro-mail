@@ -1,0 +1,29 @@
+.value-container {
+  // height: 24px;
+  border: 1px solid lightgray;
+  input {
+    height: 22px;
+    border: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: 1px solid lightgray;
+  }
+  .edit-btn {
+    padding: 0 2px;
+    &:hover {
+      background-color: #636678;
+      i {
+        color: white;
+      }
+    }
+  }
+  .delete-btn {
+    padding: 0 2px;
+    &:hover {
+      background-color: #636678;
+      i {
+        color: white;
+      }
+    }
+  }
+}

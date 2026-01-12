@@ -1,0 +1,21 @@
+.clouddisk-search {
+  .search-input {
+    width: auto;
+    .search-icon {
+      width: 20px;
+      left: 12px;
+      top: 0;
+    }
+    .filter-icon {
+      right: -16px;
+      top: 0;
+      width: 40px;
+    }
+    .dropdown-item {
+      &.active {
+        background-color: var(--bs-primary);
+        color: white;
+      }
+    }
+  }
+}

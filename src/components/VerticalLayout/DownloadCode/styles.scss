@@ -1,0 +1,12 @@
+.download-app {
+  width: 250px;
+  span {
+    // color: #a6b0cf;
+    color: var(--sidebar-color);
+  }
+}
+.modal {
+  div img {
+    image-rendering: pixelated;
+  }
+}
